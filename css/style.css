@@ -1,0 +1,163 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--color-text);
+    font-family: 'Inter', sans-serif;
+}
+:root{
+    /*Profile*/
+    --color-text:#fff;
+    --background-url:url("../assets/bg-mobile.jpg");
+
+    /*Switch*/
+    --background-url-switch:url('../assets/mon-stars.svg');
+
+    /*Link*/
+    --background-link:rgba(255, 255, 255, 0.1);
+    --backgroun-link-hover:rgba(255, 255, 255, 0.05);
+    --border-link: rgba(255, 255, 255, 0.5);
+
+    /*Social link*/
+    --background-social-hover:rgba(255, 255, 255, 0.2);;
+}
+.light{
+     /*Profile*/
+    --color-text:#000;
+    --background-url:url("../assets/bg-light.jpg");
+
+    /*Switch*/
+    --background-url-switch:url('../assets/sun.svg');
+
+    /*Link*/
+    --background-link:rgba(0, 0, 0, 0.05);
+    --backgroun-link-hover: rgba(0, 0, 0, 0.1);;
+    --border-link: rgba(0, 0, 0, 0.5);;
+     /*Social link*/
+    --background-social-hover:rgba(0, 0, 0, 0.1);
+}
+body{
+    /*background-image: url("../assets/bg-mobile.jpg");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;*/
+   /* BACGROUND-SHORTHAND
+   background: color image repeat position/size;
+   */
+   background: var(--background-url) no-repeat top center/cover;
+}
+#container{
+    width: 360px;
+    /*border: 1px solid red;*/
+    margin:56px auto 0 auto;
+    padding: 0 24px;
+}
+/*Profile*/
+#profile{
+    text-align: center;
+    padding: 24px 0;
+}
+#profile img{
+    width: 122px;
+    margin: auto;
+    margin-bottom: 8px;
+   
+}
+#profile p{
+    font: 500 1rem/1.3 'Inter', sans-serif;
+}
+/*Switch*/
+#switch{
+    position: relative;
+    margin-bottom: 20px;
+    width: 64px;/*Ajuda a alinhar*/
+    margin: 4px auto;
+}
+#switch button{/*Botao com imagem de fundo e fundo branco arredondado*/
+    background:#fff var(--background-url-switch) no-repeat center;
+    width: 32px;
+    height: 32px;
+    border: 0;
+    border-radius: 50%;
+    position: absolute;
+    transform: translateY(-50%);/*Faz alinhamento eixo vertical no position absolute*/
+    top: 50%;/*Faz alinhamento eixo vertical no position absolute*/
+    left: 0px;  
+    z-index: 1;/*para o botao aparecer na frente da barra*/
+}
+.light #switch button{
+    right: 0px;  
+    left: initial;
+}
+/*Criando a barra com border*/
+#switch span{
+    display: block;
+    width: 64px;
+    height: 24px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--backgroun-link-hover);
+    backdrop-filter: blur(4px);
+    border-radius: 20px;
+}
+.none{
+    list-style: none;
+}
+#link{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px 0;
+}
+/*Justify-content e align item alinham os elementos link A*/
+#link a{
+    display: flex;
+    justify-content: center;
+    align-items: center;/*Alinha os displey flex no eixo principal(aqui é y) se tiver height*/
+    font-weight: 500;
+    padding: 16px 24px;
+    color: var(--color-text);
+    text-decoration: none;
+    background: var(--background-link);
+    border:1px solid var(--border-link);
+    border-radius: 8px;
+    backdrop-filter: blur(4px);/*Efeito blur sutil no link a*/
+    transition: .3s;/*Usado no elemento sem estar em HOVER para ficar mais suave*/
+}
+#link a:hover{
+    background: var(--backgroun-link-hover);
+    border: 1.5px solid var(--color-text);
+}
+
+/*Social Links*/
+#social-link{
+    padding: 24px 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 24px;
+}
+#social-link a{
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;/*Junto com o padding cria borda arredondada*/
+    transition: .3s;/*Transiçao mais suave é fora do HOVER*/
+}
+#social-link a:hover{
+    background: var(--background-social-hover);
+    
+}
+
+
+
+
+
+
+
+footer{
+    text-align: center;
+    padding: 24px 0;
+    margin-bottom: 32px;
+    font-size: 14px;
+}
