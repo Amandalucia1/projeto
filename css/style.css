@@ -159,7 +159,7 @@ footer{
     margin-bottom: 32px;
     font-size: 14px;
 }
-@media(min-width:700px){
+@media(min-width:1085px){
     :root{
         --background-url:url("../assets/desktop.jpg");
     }
