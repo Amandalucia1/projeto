@@ -84,12 +84,15 @@ body{
     position: absolute;
     transform: translateY(-50%);/*Faz alinhamento eixo vertical no position absolute*/
     top: 50%;/*Faz alinhamento eixo vertical no position absolute*/
-    left: 0px;  
+    left: 0;  
     z-index: 1;/*para o botao aparecer na frente da barra*/
+    animation: slide-back .4s;
+}
+#switch button:hover{
+    outline: 8px solid var(--background-social-hover);
 }
 .light #switch button{
-    right: 0px;  
-    left: initial;
+    animation: slide-in 0.4s forwards;/*Quando terminar as regras da animaçao vc coloca FORWARDS ele mantem o que eu defini*/
 }
 /*Criando a barra com border*/
 #switch span{
@@ -163,4 +166,30 @@ footer{
     .light{
         --background-url:url("../assets/desktop-light.jpg");
     }
+
+   
 }
+
+
+ /*Animaçoes*/
+    /*Movimentaçao do botao switch*/
+    @keyframes slide-in {
+
+        /*Essa movimentaçao ocorre no .light #switch button*/
+       from{
+           left: 0;
+       }
+       to{
+           left: 50%;
+       }
+      
+   }
+
+   @keyframes slide-back {
+    from{
+        left: 50%;
+    }
+    to{
+        left: 0;
+    }
+   }
